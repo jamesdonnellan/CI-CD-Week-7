@@ -19,9 +19,9 @@ public class PersonService
         return repo.save(p);
     }
 
-    public Person update (Person p)
+    public Person update (String id, Person updated)
     {
-        return repo.save(p);
+        return null;
     }
 
     public List<Person> findAll()
@@ -33,5 +33,10 @@ public class PersonService
     {
         return repo.findByEmployeeId(id)
                 .orElseThrow(() -> new IllegalArgumentException("Person not found"));
+    }
+
+    public boolean delete(Long id)
+    {
+        return repo.delete(id );
     }
 }
